@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import AccountNav from "../AccountNav";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import PlaceImg from "../PlaceImg";
 // import PlacesFormPage from "./PlacesFormPlage";
 
 
@@ -28,10 +29,7 @@ export default function PlacesPage() {
                 {places.length > 0 && places.map((place, index) => (
                     <Link to={'/account/places/' + place._id} key={index} className=" flex cursur-pointer gap-4 bg-gray-100 p-4 rounded-2xl">
                         <div className="flex w-32 h-32 bg-gray-300 grow shrink-0 rounded-lg">
-                            {place.photos.length > 0 && (
-                                <img className="w-full h-full object-cover rounded-lg"
-                                    src={'http://localhost:4091/uploads/' + place.photos[0]} alt="" />
-                            )}
+                            <PlaceImg place={place} />
                         </div>
                         <div className="grow-0 shrink">
                             <h2 className="text-xl">{place.title}</h2>
