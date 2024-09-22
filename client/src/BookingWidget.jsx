@@ -47,11 +47,7 @@ export default function BookingWidget({ place }) {
     if (redirect) {
         return <Navigate to={redirect} />
     }
-
-
-
-
-
+    
     return (
         <div className="bg-white shadow p-4 rounded-2xl">
             <div className="text-2xl text-center">
